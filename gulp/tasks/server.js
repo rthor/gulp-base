@@ -1,3 +1,7 @@
-module.exports = function (gulp) {
-  gulp.task('server', ['connect', 'watch', 'open']);
+var runSequence = require('run-sequence');
+
+module.exports = function(gulp) {
+  gulp.task('server', function() {
+    runSequence('watch', 'connect', 'open');
+  });
 };
