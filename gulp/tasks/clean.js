@@ -1,9 +1,7 @@
 module.exports = function(gulp, gutil) {
-  var clean = require('gulp-clean');
+  var rimraf = require('rimraf');
 
-  gulp.task('clean', function() {
-    var path = gutil.env.prod ? './dist' : './dev';
-    return gulp.src(path +'/*', {read: false}).pipe( clean() );
+  gulp.task('clean', function(cb) {
+    rimraf(gulp.config.target, cb);
   });
-
 };
