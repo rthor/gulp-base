@@ -1,5 +1,3 @@
 {
-  "port": 3700,
-  "source": "app",
-  "target": "dev"
+  "port": 3700
 }
